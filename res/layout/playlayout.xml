@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/play_bg"
+    android:orientation="vertical" >
+	<ImageView
+    	android:id="@+id/show_nowpage"
+        android:layout_width="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_height="10dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/show_mid" />
+	<FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/show_nowpage" >
+        <ListView
+            android:id="@+id/showalbum_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="2dp"
+            android:cacheColorHint="#00000000"
+            android:visibility="gone" />
+        <RelativeLayout
+            android:id="@+id/contain_viewpager"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+            <android.support.v4.view.ViewPager
+                android:id="@+id/center_body_view_pager"
+                android:layout_width="fill_parent"
+                android:layout_height="400dp" >
+            </android.support.v4.view.ViewPager>
+        </RelativeLayout>
+    </FrameLayout>
+	<RelativeLayout
+        android:id="@+id/toplayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/container" >
+        <TextView
+            android:id="@+id/tv_songname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            android:maxLength="12"
+            style="@style/Yun.TextView"
+            android:shadowColor="@color/like_bg"
+            android:singleLine="true"
+            android:text="TheSong Name"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_singer_name"
+            android:layout_width="wrap_content"
+            style="@style/Yun.TextView"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_songname"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:maxLength="15"
+            android:shadowColor="@color/like_bg"
+            android:singleLine="true"
+            android:text="Singer Name"
+            android:textSize="16dp" />
+        
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="46dp"
+            style="@style/Yun.TextView"
+            android:layout_margin="3dp"
+            android:layout_toLeftOf="@+id/chose_albumlist" />
+    </RelativeLayout>
+        <LinearLayout
+        android:id="@+id/bottomlayout"
+        android:layout_width="fill_parent"
+        android:layout_below="@id/toplayout"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+        <RelativeLayout
+            android:id="@+id/show_time_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="20dp" >
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                style="@style/Yun.TextView"
+                android:layout_alignParentTop="true" />
+            <TextView
+                android:id="@+id/tv_durrction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Yun.TextView"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="3dp"
+                android:text="00:00" />
+            <TextView
+                android:id="@+id/tv_current_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Yun.TextView"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="3dp"
+                android:text="00:00" />
+            <SeekBar
+                android:id="@+id/my_seekbar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="3dp"
+                android:layout_toLeftOf="@+id/tv_durrction"
+                android:layout_toRightOf="@+id/tv_current_time"
+                android:thumb="@drawable/thumb" 
+                android:thumbOffset="3dp"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_vertical" >
+
+            <ImageButton
+                android:id="@+id/btn_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="#00000000"
+                android:src="@drawable/yun_button_play" />
+
+            <ImageButton
+                android:id="@+id/btn_previous"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="36dp"
+                android:layout_toLeftOf="@+id/btn_play"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/yun_button_back" />
+
+            <ImageButton
+                android:id="@+id/btn_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="36dp"
+                android:layout_toRightOf="@+id/btn_play"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/yun_button_next" />
+
+            <ImageButton
+                android:id="@+id/btnplay_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="26dp"
+                android:layout_toLeftOf="@+id/btn_previous"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/play_node1" />
+
+            <ImageButton
+                android:id="@+id/btnplay_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="36dp"
+                android:layout_toRightOf="@+id/btn_next"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/play_list" />
+            
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>

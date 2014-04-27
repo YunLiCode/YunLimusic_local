@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:roundImageView="http://schemas.android.com/apk/res/com.yusun.music" 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <RelativeLayout 
+			  android:id="@+id/relativelayout1"
+		    android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+				>
+			
+					<ImageView 
+  					  android:id="@+id/inverted_view"
+  					  android:layout_width="fill_parent"
+              android:layout_height="fill_parent"/>
+  					<com.tarena.fashionmusic.play.RoundImageView
+  					    android:id="@+id/iv_x"
+			          android:layout_width="200dp"
+  					    android:layout_height="200dp"
+			          android:layout_alignParentTop="true"
+  					    android:layout_centerInParent="true"
+  					    android:layout_marginLeft="5dp"
+  					    android:layout_marginRight="5dp"
+			          android:scaleType="centerCrop"
+			          roundImageView:border_inside_color="#fff7f2e9"
+			          roundImageView:border_outside_color="#ffd5d1c8"
+			          roundImageView:border_thickness="2dp"
+			          android:src="@drawable/default_bg_l" />
+  					<com.tarena.fashionmusic.play.RoundImageView 
+  						  android:id="@+id/show_album"	
+  						  android:layout_centerInParent="true"
+  						  android:layout_alignParentTop="true"
+  						  android:layout_width="200dp"
+                roundImageView:border_inside_color="#fff7f2e9"
+                roundImageView:border_outside_color="#ffd5d1c8"
+                roundImageView:border_thickness="2dp"
+                android:layout_height="200dp"/>    
+            <com.tarena.fashionmusic.lrc.LyricView
+        			  android:id="@+id/audio_lrc"
+        			  android:layout_width="fill_parent"
+        		    android:layout_height="fill_parent"
+                android:paddingBottom="15dp"
+       				 />
+  					
+  					     <TextView
+  					         android:id="@+id/tvcrrent_lrc"
+  					         android:layout_width="wrap_content"
+  					         android:layout_marginTop="10dp"
+  					         style="@style/Yun.TextView"
+  					         android:layout_height="wrap_content"
+  					         android:layout_below="@id/iv_x"
+  					         android:layout_centerHorizontal="true"
+  					         android:maxLength="25"
+  					         android:text="未找到对应的歌词文件"
+  					         android:textColor="#ffffff" />
+  					 </RelativeLayout>
+</FrameLayout>
